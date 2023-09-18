@@ -4,7 +4,7 @@ provider "aws" {
 
 # S3 Bucket for Data Upload
 resource "aws_s3_bucket" "data_bucket" {
-  bucket = "your-data-bucket-name"
+  bucket = "data-bucket"
   acl    = "private"
 }
 
@@ -52,7 +52,7 @@ resource "aws_quicksight_user" "visualization_user" {
   user_name         = "visualization-user"
   email             = "user@example.com"
   identity_type     = "IAM"
-  aws_account_id    = "your-aws-account-id"
+  aws_account_id    = "aws-account-id"
   namespace         = "default"
   group_membership  = [aws_quicksight_group.visualization_group.arn]
 }
